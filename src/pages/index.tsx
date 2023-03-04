@@ -1,5 +1,6 @@
 
 import { Inter } from 'next/font/google'
+import Hero from '../../components/Hero'
 import Layout from '../../components/Layout'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -11,7 +12,7 @@ export default function Home() {
       invertTitle
       description={`A fully funded work-study program to launch your tech career`}>
      
-     <div>Hello world</div>
+      <Hero />
     
     </Layout>
   )
