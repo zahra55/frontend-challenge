@@ -4,10 +4,7 @@ import colors from '../../core/theme/colors'
 import Button from '../basic/Button'
 import CountDown from './CountDown'
 
-const Home = () => {
-  const homeRef = useRef(0)
-  const endDate = new Date()
-
+const Hero = () => {
   const goToAbout = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -70,7 +67,7 @@ const Home = () => {
             </div>
             <div className={"box f4"}>
               <span className={"f-label"}>End Date</span>
-              <span className={"info"}>{endDate.getTime()}</span>
+              <span className={"info"}>{"h"}</span>
             </div>
           </div>
         </div>
@@ -234,4 +231,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Hero
