@@ -5,5 +5,9 @@ export default {
   secondary: "#21A467",
 
   // general
-  white: '#ffffff'
+  white: '#ffffff',
+  black: '#000000',
+
+  // Text
+  grey: '#535353',
 }
