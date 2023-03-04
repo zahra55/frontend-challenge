@@ -7,6 +7,7 @@ export default {
   // general
   white: '#ffffff',
   black: '#000000',
+  stroke: "#DADADA",
 
   // Text
   grey: '#535353',

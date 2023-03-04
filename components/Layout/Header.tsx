@@ -14,6 +14,10 @@ const Header = () => {
           align-items: center;
           background: ${colors.primary};
           padding: 12px 14px 12px 14px;
+          z-index: 12;
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0;
         }
         h4 {
           color: ${colors.white};
