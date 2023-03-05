@@ -3,6 +3,7 @@ import colors from "../../core/theme/colors"
 import Button from "../basic/Button"
 import useSWR from 'swr'
 import axios from 'axios'
+import ScholarshipDetailsGrid from "./ScholarshipDetailsGrid"
 
 
 interface Scolarship {
@@ -38,40 +39,96 @@ const About = () => {
 
   return (
     <div className={"about"}>
-      <div className={"box about-inner"}>
-          <h3 className='about-line'>About the apprenticeship</h3>
-          <span>{data.scholarship.about.map((item: AboutItem) => <span key={item.id}>{item.data}</span>)}</span>
-          <div>{data.scholarship.total_value}</div>
-          <div>
-            <div>{data.scholarship.name}</div>
-            <div>
-              <span>Scholarship value: </span>
-              <span>{data.scholarship.total_value}</span>
-            </div>
+        <div className="wrapper">
+          <div className="box a">
+            <Image 
+              src="/about-image.png"
+              alt="About image"
+              height={380}
+              width={380}/>
           </div>
-      </div>
+          <div className="box b">
+            <h3>About the apprenticeship</h3>
+          </div>
+          <div className="box c">
+            <span className={"description"}>{data.scholarship.about.map((item: AboutItem) => <p key={item.id}>{item.data}</p>)}</span>
+          </div>
+        </div>
+        <div>
+          <ScholarshipDetailsGrid 
+            scholarshipValue={data.scholarship.total_value}
+            tuition={data.scholarship.tuition} 
+            stipend={data.scholarship.stipend_per_month}
+            remaining={data.scholarship.remaining}
+            studyCommitment={data.scholarship.study_commitment}
+            internshipCommitmentText={data.scholarship.internship_commitment_text}
+            workCommitment={data.scholarship.work_commitment}
+            degree={data.scholarship.degree}
+            studyCommitmentText={data.scholarship.study_commitment_text} />
+        </div>
+       
+
+
       
       <style jsx>{`
-        .about-inner {
-          display: flex;
-          flex-direction: column;
-          justify-content: center; 
-        }
+      .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.5rem 7rem;
+      }
 
-        .image-container {
-          object-fit: cover;
-          border-radius: 100%;
-          overflow: hidden;
-        }
+      .wrapper {
+        display: grid;
+        grid-template-row: repeate(4, 100px)
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 5px 40px;
+   
+      }
 
-        .about-img {
-          overflow: hidden;
-        }
 
-        .about-line {
-          color: ${colors.primary};
-          font-size: 3rem;
-        }
+      .a {
+        grid-row: 1 / 4;
+        grid-column: 1 / 3;
+      }
+
+      .b {
+        grid-row: 1 / 1;
+        grid-column: 4;
+        display: flex;
+        align-items: center;
+      }
+
+      .c {
+        grid-row: 2 / 4;
+        grid-column: 4 ;
+      }
+
+      .a {
+        object-fit: cover;
+        border-radius: 100%;
+        overflow: hidden;
+      }
+
+      .a, h3 {
+        color: ${colors.primary};
+        font-size: 3rem;
+      }
+
+      .description {
+        font-weight: 300;
+        font-size: 1.375rem;
+        color: ${colors.grey}
+      }
+
+      .about-img {
+        overflow: hidden;
+      }
+
+      .about-line {
+        color: ${colors.primary};
+        font-size: 3rem;
+      }
       `}</style>
     </div>
   )

@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { useRef } from 'react'
 import colors from '../../core/theme/colors'
 import Button from '../basic/Button'
 import CountDown from './CountDown'
@@ -55,7 +54,7 @@ const Hero = () => {
           <div className={"box f"}>
             <div className={"box f1"}>
               <span className={"f-label"}>Location</span>
-              <span className={"info"}>Bankok</span>
+              <span className={"info"}>Barcelona</span>
             </div>
             <div className={"box f2"}>
               <span className={"f-label"}>Duration</span>
@@ -196,7 +195,7 @@ const Hero = () => {
 
         .description {
           font-weight: 300;
-          font-size: 22px;
+          font-size: 1.375rem;
           color: ${colors.grey}
         }
 
