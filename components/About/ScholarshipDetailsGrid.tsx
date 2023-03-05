@@ -151,7 +151,12 @@ const ScholarshipDetailsGrid: import('react').FC<Props> = ({scholarshipValue, tu
             gap: 20px;
           }
 
-
+          @media only screen and (max-width: 800px) {
+            .wrapper {
+              display: flex;
+              flex-direction: column;
+            }
+          }
 
       `}</style>
     </>

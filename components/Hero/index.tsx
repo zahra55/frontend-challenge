@@ -79,7 +79,8 @@ const Hero = () => {
           justify-content: center;
           align-content: center;
           margin-top: 100px;
-          margin-bottom: 150px
+          margin-bottom: 150px;
+          padding: 20px;
         }
         .wrapper {
           display: grid;
@@ -209,22 +210,92 @@ const Hero = () => {
           color: ${colors.primary}
         }
 
-       .f1, .f2, .f3, .f4 {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-       }
-
-       .cta {
-        display: flex;
-        justify-content: flex-start;
-       }
-
-       @media only screen and (max-width: 428px) {
-        .hero {
-          grid-template-columns: repeat(2, 1fr);
+        .f1, .f2, .f3, .f4 {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
         }
-      }
+
+        .cta {
+          display: flex;
+          justify-content: flex-start;
+        }
+
+        @media only screen and (max-width: 600px) {
+          .hero {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            margin-bottom: 100px
+          }
+          .wrapper {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 1fr ;
+            grid-template-rows: repeat(6, [row] auto  );
+          }
+
+          .a {
+            grid-column: 1;
+            grid-row: 1;
+          }
+  
+          .b {
+            grid-column: 1;
+            grid-row: 2;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 14px;
+          }
+        
+          .c {
+            grid-column: 1;
+            grid-row: 4;
+            display: grid;
+            gap: 10px;
+          }
+        
+          .d{
+            grid-column: 1;
+            grid-row: 3;
+            display: flex;
+            flex-direction: column;
+            grid-gap: 10px;
+            grid-template-columns: 1fr 1fr;
+          }
+        
+          .e {
+            grid-column: 1 / 3;
+            grid-row: 1;
+            background-color: ${colors.white};
+            border: solid 1px ${colors.stroke};
+            border-radius: 5px;
+          }
+        
+          .f {
+            grid-column: 1;
+            grid-row: 2;
+            background-color: ${colors.white};
+            border: solid 1px ${colors.stroke};
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+          }
+        
+          .g {
+            grid-column: 2;
+            grid-row: 2;
+          }
+
+          .hero-line {
+            color: ${colors.primary};
+            font-size: 2.188rem;
+          }
+        }
       `}</style>
     </div>
   )

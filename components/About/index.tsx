@@ -1,6 +1,5 @@
 import Image from "next/image"
 import colors from "../../core/theme/colors"
-import Button from "../basic/Button"
 import useSWR from 'swr'
 import axios from 'axios'
 import ScholarshipDetailsGrid from "./ScholarshipDetailsGrid"
@@ -71,64 +70,90 @@ const About = () => {
 
       
       <style jsx>{`
-      .about {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 1.5rem 7rem;
-      }
+        .about {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 1.5rem 7rem;
+        }
 
-      .wrapper {
-        display: grid;
-        grid-template-row: repeate(4, 100px)
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 5px 40px;
-   
-      }
+        .wrapper {
+          display: grid;
+          grid-template-row: repeate(4, 100px)
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 5px 40px;
+    
+        }
 
 
-      .a {
-        grid-row: 1 / 4;
-        grid-column: 1 / 3;
-      }
+        .a {
+          grid-row: 1 / 4;
+          grid-column: 1 / 3;
+          object-fit: cover;
+          border-radius: 100%;
+          overflow: hidden;
+        }
 
-      .b {
-        grid-row: 1 / 1;
-        grid-column: 4;
-        display: flex;
-        align-items: center;
-      }
+        .b {
+          grid-row: 1 / 1;
+          grid-column: 4;
+          display: flex;
+          align-items: center;
+        }
 
-      .c {
-        grid-row: 2 / 4;
-        grid-column: 4 ;
-      }
+        .c {
+          grid-row: 2 / 4;
+          grid-column: 4 ;
+        }
 
-      .a {
-        object-fit: cover;
-        border-radius: 100%;
-        overflow: hidden;
-      }
+        .a, h3 {
+          color: ${colors.primary};
+          font-size: 3rem;
+        }
 
-      .a, h3 {
-        color: ${colors.primary};
-        font-size: 3rem;
-      }
+        .description {
+          font-weight: 300;
+          font-size: 1.375rem;
+          color: ${colors.grey}
+        }
 
-      .description {
-        font-weight: 300;
-        font-size: 1.375rem;
-        color: ${colors.grey}
-      }
+        .about-img {
+          overflow: hidden;
+        }
 
-      .about-img {
-        overflow: hidden;
-      }
+        .about-line {
+          color: ${colors.primary};
+          font-size: 3rem;
+        }
 
-      .about-line {
-        color: ${colors.primary};
-        font-size: 3rem;
-      }
+        @media only screen and (max-width: 800px) {
+          .about {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+          }
+
+          .wrapper {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .about-line {
+            color: ${colors.primary};
+            font-size: 1rem;
+          }
+
+          .description {
+            font-weight: 300;
+            font-size: 1.375rem;
+            color: ${colors.grey}
+          }
+
+          .a {
+            display: none;
+          }
+        }
       `}</style>
     </div>
   )
