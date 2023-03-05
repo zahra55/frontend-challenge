@@ -62,7 +62,7 @@ const Hero = () => {
          
           <h5>Position: Marketing Performance</h5>
           <div className='cta'>
-            <Button title='More About Course' onClick={goToAbout} />
+            <Button label='Apply Now' onClick={goToAbout} />
           </div>
           
         </div>
