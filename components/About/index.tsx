@@ -76,7 +76,7 @@ const About = () => {
           align-content: center;
           flex-direction: column;
           padding: 1.5rem 1.5rem;
-          margin: 10rem 7rem
+          margin: 10rem 7rem;
         }
 
         .wrapper {
@@ -134,6 +134,7 @@ const About = () => {
             flex-direction: column;
             justify-content: flex-start;
             padding: 20px;
+            margin: 20px 20px;
           }
 
           .wrapper {
