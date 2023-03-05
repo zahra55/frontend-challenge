@@ -2,8 +2,30 @@ import Image from 'next/image'
 import colors from '../../core/theme/colors'
 import Button from '../basic/Button'
 import CountDown from './CountDown'
+import useSWR from 'swr'
+import axios from 'axios'
+
+export const fetcher = (url: string) => axios.get(url).then(response => response.data)
 
 const Hero = () => {
+  const {data, error} = useSWR(
+    'https://pre-prod.harbour.space/api/v1/scholarship_pages/25',
+    fetcher
+  )
+
+  if(error) {
+    return <p>{error.massage}</p>
+  }
+
+  if(!data) {
+    return <p>Loading...</p>
+  }
+
+  if(data) {
+    console.log('data: ', data)
+  }
+
+
   const goToAbout = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -17,7 +39,7 @@ const Hero = () => {
 
       <div className={"wrapper"}>
         <div className={"box a"}>
-          <h3 className='hero-line'>Interaction Design Apprenticeship</h3>
+          <h3 className='hero-line'>{data.scholarship.name}</h3>
         </div>
         <div className={"box b"}>
           <Image
@@ -35,11 +57,9 @@ const Hero = () => {
           <p className={"sub-line"}>
             A fully funded work-study program to launch your tech career
           </p>
-          <p className={"description"}>
-            Harbour.Space has partnered with SCG to empower driven talent and eliminate
-            the barriers to accessing exceptional education and career opportunities
-            through a Masters Fellowship.
-          </p>
+      
+            {data.scholarship.description.map((item: {id: string, data: string}) => <p key={item.id} className={"description"}>{item.data}</p>)}
+         
           <h5>Position: Marketing Performance</h5>
           <div className='cta'>
             <Button title='More About Course' onClick={goToAbout} />
@@ -54,19 +74,19 @@ const Hero = () => {
           <div className={"box f"}>
             <div className={"box f1"}>
               <span className={"f-label"}>Location</span>
-              <span className={"info"}>Barcelona</span>
+              <span className={"info"}>{data.scholarship.location.name}</span>
             </div>
             <div className={"box f2"}>
               <span className={"f-label"}>Duration</span>
               <span className={"info"}>1 Year</span>
             </div>
             <div className={"box f3"}>
-              <span className={"f-label"}>Location</span>
-              <span className={"info"}>Bankok</span>
+              <span className={"f-label"}>Start date</span>
+              <span className={"info"}>{data.scholarship.scholarship_start_date}</span>
             </div>
             <div className={"box f4"}>
               <span className={"f-label"}>End Date</span>
-              <span className={"info"}>{"h"}</span>
+              <span className={"info"}>{data.scholarship.application_end_date}</span>
             </div>
           </div>
         </div>
@@ -103,7 +123,7 @@ const Hero = () => {
         }
       
         .a {
-          grid-column: col / span 2;
+          grid-column: col / span 3;
           grid-row: row;
         }
 
