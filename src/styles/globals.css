@@ -96,6 +96,13 @@ a {
   text-decoration: none;
 }
 
+.about-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 @media (prefers-color-scheme: light) {
   html {
     color-scheme: light;

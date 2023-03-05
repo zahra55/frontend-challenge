@@ -72,9 +72,11 @@ const About = () => {
       <style jsx>{`
         .about {
           display: flex;
-          flex-direction: column;
           justify-content: center;
-          padding: 1.5rem 7rem;
+          align-content: center;
+          flex-direction: column;
+          padding: 1.5rem 1.5rem;
+          margin: 10rem 7rem
         }
 
         .wrapper {

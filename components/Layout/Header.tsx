@@ -1,11 +1,21 @@
+import Link from 'next/link'
 import colors from '../../core/theme/colors'
 
 const Header = () => {
 
   return (
     <div className={'header'}>
-      <h4>Harbour.Space</h4>
-      <h4>More</h4>
+      <div>
+        <Link href="/">
+          <h4>Harbour.Space</h4>
+        </Link>
+      </div>
+      <div>
+        <Link href="/about">
+          <h4>About</h4>
+        </Link>
+      </div>
+
 
       <style jsx>{`
         .header {
@@ -13,7 +23,7 @@ const Header = () => {
           justify-content: space-between;
           align-items: center;
           background: ${colors.primary};
-          padding: 12px 14px 12px 14px;
+          padding: 12px 40px 12px 20px;
           z-index: 12;
           position: -webkit-sticky;
           position: sticky;
