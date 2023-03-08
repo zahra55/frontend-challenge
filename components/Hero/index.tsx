@@ -36,7 +36,6 @@ const Hero = () => {
 
   return (
     <div className={'hero'}>
-
       <div className={"wrapper"}>
         <div className={"box a"}>
           <h3 className='hero-line'>{data.scholarship.name}</h3>
