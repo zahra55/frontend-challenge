@@ -49,7 +49,7 @@ const Button: import('react').FC<Props> = ({ label, onClick, children }) => {
             width: 100%;
             height: 100%;
             background: ${colors.primary};
-            border-radius: 10px;
+            border-radius: 50px;
           }
           
           .button::after {

@@ -98,9 +98,10 @@ const Hero = () => {
           display: flex;
           justify-content: center;
           align-content: center;
-          margin-top: 100px;
-          margin-bottom: 150px;
+          margin-top: 50px;
+          margin-bottom: 100px;
           padding: 20px;
+          
         }
         .wrapper {
           display: grid;
@@ -241,12 +242,13 @@ const Hero = () => {
           justify-content: flex-start;
         }
 
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 800px) {
           .hero {
             display: flex;
             flex-direction: column;
             margin-top: 50px;
-            margin-bottom: 100px
+            margin-bottom: 50px;
+            padding: 20px;
           }
           .wrapper {
             display: grid;

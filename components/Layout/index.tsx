@@ -18,7 +18,6 @@ const Layout: import('react').FC<Props> = ({title, invertTitle, description, chi
           <meta name="title" content={title || 'Zahra'} />
           <meta name="description" content={description} />
       </Head>
-
       <Header/>
       <main>{children}</main>
     </>

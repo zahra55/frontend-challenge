@@ -12,6 +12,15 @@ const About = () => {
       <div className={"about-page"}>
         <h3>About Page</h3>
       </div>
+
+      <style jsx>{`
+        .about-page {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+      `}</style>
     </Layout>
 
   )

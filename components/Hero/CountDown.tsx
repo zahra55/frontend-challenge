@@ -110,6 +110,12 @@ const CountDown: NextComponentType = () => {
             .label {
               font-size: 1.5rem
             }
+
+            @media only screen and (max-width: 800px) {
+              .label {
+                font-size: 0.875rem
+              }
+            }
         `}</style>
     </> 
   )
