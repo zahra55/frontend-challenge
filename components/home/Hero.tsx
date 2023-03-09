@@ -3,9 +3,7 @@ import colors from '../../core/theme/colors'
 import Button from '../basic/Button'
 import CountDown from './CountDown'
 import useSWR from 'swr'
-import axios from 'axios'
-
-export const fetcher = (url: string) => axios.get(url).then(response => response.data)
+import { fetcher } from '@components/pages/api/api'
 
 const Hero = () => {
   const {data, error} = useSWR(

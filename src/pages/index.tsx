@@ -1,14 +1,10 @@
 import { Inter } from 'next/font/google'
 import About from '../../components/About'
-import Hero from '../../components/Hero'
+import Hero from '../../components/home/Hero'
 import Layout from '../../components/Layout'
-import useSWR from 'swr'
-import axios from 'axios'
+import Testimonials from '../../components/home/Testimonials'
 
 const inter = Inter({ subsets: ['latin'] })
-
-export const fetcher = (url: string) => axios.get(url).then(response => response.data)
-
 
 
 export default function Home() {
@@ -22,6 +18,7 @@ export default function Home() {
       
       <Hero />
       <About />
+      <Testimonials />
     </Layout>
   )
 }

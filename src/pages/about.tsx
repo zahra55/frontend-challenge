@@ -1,27 +1,8 @@
 import Layout from "../../components/Layout"
-import useSWR from 'swr'
-import axios from 'axios'
 
-export const fetcher = (url: string) => axios.get(url).then(response => response.data)
+
 
 const About = () => {
-
-  const {data, error} = useSWR(
-    'https://api.sampleapis.com/coffee/hot',
-    fetcher
-  )
-
-  if(error) {
-    return <p>{error.massage}</p>
-  }
-
-  if(!data) {
-    return <p>Loading...</p>
-  }
-
-  if(data) {
-    console.log('data: ', data)
-  }
 
   return (
     <Layout

@@ -8,6 +8,7 @@ export default {
   white: '#ffffff',
   black: '#000000',
   stroke: "#DADADA",
+  background: "#FBFBFB",
 
   // Text
   grey: '#535353',
