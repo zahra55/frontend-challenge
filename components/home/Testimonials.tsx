@@ -54,6 +54,17 @@ const Testimonials = () => {
           overflow-x: auto;
           overscroll-behavior-inline: contain;
           padding: 20px 40px;
+          margin: 5px;
+        }
+
+        @media only screen and (max-width: 800px) {
+          .scrollable-x {
+            grid-auto-columns: 110%;
+            display: grid;
+            grid-auto-flow: column;
+            gap: 10px;
+          }
+
         }
         
       `}</style>

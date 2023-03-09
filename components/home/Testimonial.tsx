@@ -72,7 +72,7 @@ const Testimonial: import('react').FC<Props> = ({ className, imageSrc, status, s
           font-weight: 300;
           font-size: 1rem;
           color: ${colors.grey};
-          margin: 20px 50px;
+          margin: 20px 30px;
         }
 
         .student {
@@ -97,6 +97,21 @@ const Testimonial: import('react').FC<Props> = ({ className, imageSrc, status, s
           background-color: ${colors.white};
           gap: 20px;
           padding: 20px;
+        }
+
+        @media only screen and (max-width: 800px) {
+          .container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            border: 1px solid ${colors.stroke};
+            border-radius: 4px;
+            background-color: ${colors.background};
+            min-width: 400px;
+            max-height: 400px;
+            flex-shrink: 0;
+            margin: 5px;
+          }
         }
       `}</style>
     </div>

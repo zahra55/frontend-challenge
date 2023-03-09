@@ -84,6 +84,14 @@ const Footer: import('react').FC<Props> = () => {
           font-size: 0.875rem;
           font-weight: 300;
         }
+
+
+        @media only screen and (max-width: 800px) {
+          .container {
+            padding: 10px 10px;
+            margin-top: 100px;
+          }
+        }
       `}</style>
     </div>
   )
