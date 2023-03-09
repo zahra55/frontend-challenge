@@ -1,8 +1,8 @@
 import Image from "next/image"
 import colors from "../../core/theme/colors"
 import useSWR from 'swr'
-import axios from 'axios'
 import ScholarshipDetailsGrid from "./ScholarshipDetailsGrid"
+import { fetcher } from "@components/pages/api/api"
 
 
 interface Scolarship {
@@ -15,7 +15,6 @@ interface AboutItem {
   data: string
 }
 
-export const fetcher = (url: string) => axios.get(url).then(response => response.data)
 
 const About = () => {
 

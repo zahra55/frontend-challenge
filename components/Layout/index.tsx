@@ -1,5 +1,6 @@
 
 import Head from 'next/head'
+import Footer from './Footer'
 import Header from './Header'
 
 type Props =  {
@@ -20,6 +21,7 @@ const Layout: import('react').FC<Props> = ({title, invertTitle, description, chi
       </Head>
       <Header/>
       <main>{children}</main>
+      <Footer />
     </>
 
 
